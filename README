@@ -1,0 +1,42 @@
+# LeadDesk Mini — Django REST Framework API (Backend)
+
+Built for the **Digital Heroes Internship Qualification Task (Role 04: Full Stack Development)**.
+
+- **GitHub Repository**: https://github.com/swagath088/digital-heroes
+- **Base API URL**: https://leaddesk-backend-63q9.onrender.com/api/
+- **Health Check Endpoint**: https://leaddesk-backend-63q9.onrender.com/health/
+- **Frontend App**: https://digitalheroesfntend.vercel.app/
+
+---
+
+## 🛠️ Architecture & Tech Stack
+- **Framework**: Django 4.2 & Django REST Framework
+- **Language**: Python 3.11
+- **Database**: SQLite / Django ORM
+- **Authentication**: Custom REST view validating Django Superusers via `django.contrib.auth.authenticate()`
+- **CORS Configuration**: Configured via `django-cors-headers` to accept requests from Vercel origins.
+
+---
+
+## 📋 API Contract
+
+### 1. Submit & List Leads
+- **Endpoint**: `POST /api/leads/` | `GET /api/leads/`
+- **Search Filter**: `GET /api/leads/?search=term` (Filters by `full_name` or `email`)
+
+### 2. Update Lead Status
+- **Endpoint**: `PATCH /api/leads/<id>/`
+- **Payload**: `{"status": "Contacted"}`
+
+### 3. Admin Authentication
+- **Endpoint**: `POST /api/auth/login/`
+- **Payload**: `{"email": "sswagath46@gmail.com", "password": "yourpassword"}`
+
+---
+
+## 🤖 AI Usage Disclosure
+AI tools (ChatGPT/Gemini) were utilized during backend development to assist with error rectification (such as resolving `ALLOWED_HOSTS` and CORS configurations), implementing the `/health/` check endpoint for Render uptime monitoring, and setting up initial Django REST Framework view structures. All logic was manually verified, tested, and adjusted to ensure seamless data persistence and authentication.
+---
+
+## 📜 Mandatory Credit
+Built for Digital Heroes Training Task — [digitalheroesco.com](https://digitalheroesco.com)
